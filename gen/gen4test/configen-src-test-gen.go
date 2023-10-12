@@ -8,7 +8,7 @@ import (
 // type p93b03070f.TableReg in package:github.com/starter-go/module-gorm-sqlite/src/test/test1
 //
 // id:com-93b03070f87188ec-test1-TableReg
-// class:class-512a309140d0ad99eb1c95c8dc0d02f9-TableRegistry
+// class:class-512a309140d0ad99eb1c95c8dc0d02f9-GroupRegistry
 // alias:
 // scope:singleton
 //
@@ -18,7 +18,7 @@ type p93b03070f8_test1_TableReg struct {
 func (inst* p93b03070f8_test1_TableReg) register(cr application.ComponentRegistry) error {
 	r := cr.NewRegistration()
 	r.ID = "com-93b03070f87188ec-test1-TableReg"
-	r.Classes = "class-512a309140d0ad99eb1c95c8dc0d02f9-TableRegistry"
+	r.Classes = "class-512a309140d0ad99eb1c95c8dc0d02f9-GroupRegistry"
 	r.Aliases = ""
 	r.Scope = "singleton"
 	r.NewFunc = inst.new
