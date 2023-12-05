@@ -4,14 +4,14 @@ import (
 	"embed"
 
 	"github.com/starter-go/application"
-	"github.com/starter-go/libgorm/modgorm"
+	"github.com/starter-go/libgorm/modules/libgorm"
 	"github.com/starter-go/module-gorm-sqlite/gen/gen4driver"
 )
 
 const (
 	theModuleName     = "github.com/starter-go/module-gorm-sqlite"
-	theModuleVersion  = "v0.9.2"
-	theModuleRevision = 5
+	theModuleVersion  = "v0.9.3"
+	theModuleRevision = 6
 	theModuleResPath  = "src/main/resources"
 )
 
@@ -28,7 +28,7 @@ func Module() application.Module {
 	mb.EmbedResources(theModuleResFS, theModuleResPath)
 	mb.Components(gen4driver.ExportComForGormSqlite)
 
-	mb.Depend(modgorm.Module())
+	mb.Depend(libgorm.Module())
 
 	return mb.Create()
 }

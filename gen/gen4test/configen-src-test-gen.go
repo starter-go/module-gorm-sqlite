@@ -37,6 +37,10 @@ func (inst* p93b03070f8_test1_TableReg) inject(injext application.InjectionExt, 
 
 	
     com.Context = inst.getContext(ie)
+    com.Enabled = inst.getEnabled(ie)
+    com.Prefix = inst.getPrefix(ie)
+    com.URI = inst.getURI(ie)
+    com.Source = inst.getSource(ie)
 
 
     return nil
@@ -45,6 +49,26 @@ func (inst* p93b03070f8_test1_TableReg) inject(injext application.InjectionExt, 
 
 func (inst*p93b03070f8_test1_TableReg) getContext(ie application.InjectionExt)p0ef6f2938.Context{
     return ie.GetContext()
+}
+
+
+func (inst*p93b03070f8_test1_TableReg) getEnabled(ie application.InjectionExt)string{
+    return ie.GetString("${datagroup.dg1.enabled}")
+}
+
+
+func (inst*p93b03070f8_test1_TableReg) getPrefix(ie application.InjectionExt)string{
+    return ie.GetString("${datagroup.dg1.table-name-prefix}")
+}
+
+
+func (inst*p93b03070f8_test1_TableReg) getURI(ie application.InjectionExt)string{
+    return ie.GetString("${datagroup.dg1.uri}")
+}
+
+
+func (inst*p93b03070f8_test1_TableReg) getSource(ie application.InjectionExt)string{
+    return ie.GetString("${datagroup.dg1.datasource}")
 }
 
 
