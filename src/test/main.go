@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/starter-go/application"
-	modulegormsqlite "github.com/starter-go/module-gorm-sqlite"
 	"github.com/starter-go/module-gorm-sqlite/gen/gen4test"
+	"github.com/starter-go/module-gorm-sqlite/modules/sqlite"
 	"github.com/starter-go/starter"
 )
 
@@ -32,7 +32,7 @@ func module() application.Module {
 
 	mb.EmbedResources(theResFS, "resources")
 	mb.Components(gen4test.ExportComForGormSqliteTest)
-	mb.Depend(modulegormsqlite.Module())
+	mb.Depend(sqlite.Module())
 
 	return mb.Create()
 }

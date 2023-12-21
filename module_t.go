@@ -5,7 +5,6 @@ import (
 
 	"github.com/starter-go/application"
 	"github.com/starter-go/libgorm/modules/libgorm"
-	"github.com/starter-go/module-gorm-sqlite/gen/gen4driver"
 )
 
 const (
@@ -18,17 +17,16 @@ const (
 //go:embed "src/main/resources"
 var theModuleResFS embed.FS
 
-// Module 导出模块 ['github.com/starter-go/module-gorm-sqlite']
-func Module() application.Module {
+// NewDriverModule 创建模块 ['github.com/starter-go/module-gorm-sqlite']
+func NewDriverModule() *application.ModuleBuilder {
 
 	mb := &application.ModuleBuilder{}
 	mb.Name(theModuleName)
 	mb.Version(theModuleVersion)
 	mb.Revision(theModuleRevision)
 	mb.EmbedResources(theModuleResFS, theModuleResPath)
-	mb.Components(gen4driver.ExportComForGormSqlite)
 
 	mb.Depend(libgorm.Module())
 
-	return mb.Create()
+	return mb
 }
