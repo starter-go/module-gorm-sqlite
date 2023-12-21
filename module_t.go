@@ -9,8 +9,8 @@ import (
 
 const (
 	theModuleName     = "github.com/starter-go/module-gorm-sqlite"
-	theModuleVersion  = "v0.9.3"
-	theModuleRevision = 6
+	theModuleVersion  = "v1.0.0"
+	theModuleRevision = 7
 	theModuleResPath  = "src/main/resources"
 )
 
